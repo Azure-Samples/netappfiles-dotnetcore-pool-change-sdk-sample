@@ -34,8 +34,8 @@ namespace Microsoft.Azure.Management.ANF.Samples
         const string primaryCapacityPoolServiceLevel = "Premium";
 
         //Secondary Capacity pool
-        const string secondarycapacityPoolName = "anfsecondarypool";
-        const string SecondarycapacityPoolServiceLevel = "Standard";
+        const string secondaryCapacityPoolName = "anfsecondarypool";
+        const string SecondaryCapacityPoolServiceLevel = "Standard";
 
 
         // Shared Capacity Pool Properties
@@ -101,7 +101,7 @@ namespace Microsoft.Azure.Management.ANF.Samples
             // Creating ANF Secondary Capacity Pool
             //----------------------            
             WriteConsoleMessage($"Requesting ANF Secondary Capacity Pool to be created in {location}");
-            var newSecondaryPool = await Creation.CreateOrUpdateANFCapacityPoolAsync(anfClient, resourceGroupName, location, anfAccountName, secondarycapacityPoolName, capacitypoolSize, SecondarycapacityPoolServiceLevel);
+            var newSecondaryPool = await Creation.CreateOrUpdateANFCapacityPoolAsync(anfClient, resourceGroupName, location, anfAccountName, secondaryCapacityPoolName, capacitypoolSize, SecondaryCapacityPoolServiceLevel);
             WriteConsoleMessage($"\tAccount Resource Id: {newSecondaryPool.Id}");
 
             //----------------------
@@ -119,7 +119,7 @@ namespace Microsoft.Azure.Management.ANF.Samples
             //----------------------------------            
             WriteConsoleMessage("Performing Pool Change. Updating volume...");
             await Update.ChangeVolumeCapacityPoolAsync(anfClient, resourceGroupName, anfAccountName, primaryCapacityPoolName, anfVolumeName, newSecondaryPool.Id);
-            WriteConsoleMessage($"\tPool change is successful. Moved volume from {primaryCapacityPoolName} to {secondarycapacityPoolName}");
+            WriteConsoleMessage($"\tPool change is successful. Moved volume from {primaryCapacityPoolName} to {secondaryCapacityPoolName}");
 
             //--------------------
             // Clean Up Resources
@@ -133,8 +133,8 @@ namespace Microsoft.Azure.Management.ANF.Samples
 
                 // Deleting Volume in the secondary pool first
                 WriteConsoleMessage("Deleting Volume in the secondary Pool...");
-                var volume = await anfClient.Volumes.GetAsync(resourceGroupName, anfAccountName, secondarycapacityPoolName, anfVolumeName);
-                await Deletion.DeleteANFVolumeAsync(anfClient, resourceGroupName, anfAccountName, secondarycapacityPoolName, anfVolumeName);
+                var volume = await anfClient.Volumes.GetAsync(resourceGroupName, anfAccountName, secondaryCapacityPoolName, anfVolumeName);
+                await Deletion.DeleteANFVolumeAsync(anfClient, resourceGroupName, anfAccountName, secondaryCapacityPoolName, anfVolumeName);
                 await ResourceUriUtils.WaitForNoAnfResource<Volume>(anfClient, volume.Id);
 
                 // Deleting Primary Pool
@@ -144,7 +144,7 @@ namespace Microsoft.Azure.Management.ANF.Samples
 
                 // Deleting Secondary pool
                 WriteConsoleMessage("Deleting secondary Pool...");
-                await Deletion.DeleteANFCapacityPoolAsync(anfClient, resourceGroupName, anfAccountName, secondarycapacityPoolName);
+                await Deletion.DeleteANFCapacityPoolAsync(anfClient, resourceGroupName, anfAccountName, secondaryCapacityPoolName);
                 await ResourceUriUtils.WaitForNoAnfResource<CapacityPool>(anfClient, newSecondaryPool.Id);
 
                 //Deleting Account
