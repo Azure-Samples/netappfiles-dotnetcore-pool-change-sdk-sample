@@ -11,7 +11,7 @@ description: "This project demonstrates how to perform a pool change on a Volume
 # Azure NetAppFiles SDK Sample - Pool Change for .NETCore 
 
 This project demonstrates how to use a .NETCore sample application to perform a pool change on a Volume for the Microsoft.NetApp
-resource provider.
+resource provider. 
 
 In this sample application we perform the following operations:
 
