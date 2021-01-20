@@ -21,7 +21,7 @@ In this sample application we perform the following operations:
     * Secondary Capacity Pool in service level Standard
     * Volume in the Primary pool
 * Updates
-    * Perform pool change, moving Volume from Primary capacity pool to Secondary capacity pool
+    * Perform pool change, moving Volume from Primary capacity pool to Secondary capacity pool 
 * Deletions
     * Volume
     * Primary Capacity Pool
@@ -31,7 +31,7 @@ In this sample application we perform the following operations:
 >Note: The cleanup execution is disabled by default. If you want to run this end to end with the cleanup, please
 >change value of boolean variable 'shouldCleanup' in program.cs
 
-If you don't already have a Microsoft Azure subscription, you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212).
+If you don't already have a Microsoft Azure subscription, you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212). 
 
 ## Prerequisites
 
