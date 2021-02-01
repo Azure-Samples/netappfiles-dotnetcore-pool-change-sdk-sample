@@ -11,7 +11,7 @@ description: "This project demonstrates how to perform a pool change on a Volume
 # Azure NetAppFiles SDK Sample - Pool Change for .NETCore 
 
 This project demonstrates how to use a .NETCore sample application to perform a pool change on a Volume for the Microsoft.NetApp
-resource provider. 
+resource provider.
 
 In this sample application we perform the following operations:
 
@@ -22,7 +22,7 @@ In this sample application we perform the following operations:
     * Volume in the Primary pool
 * Updates
     * Perform pool change, moving Volume from Primary capacity pool to Secondary capacity pool 
-* Deletions
+    * Deletions
     * Volume
     * Primary Capacity Pool
     * Secondary Capacity Pool
@@ -38,7 +38,7 @@ If you don't already have a Microsoft Azure subscription, you can get a FREE tri
 1. Azure Subscription
 1. Subscription needs to be enabled for Azure NetApp Files. For more information, please refer to [this](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register#waitlist) document.
 1. (Valid only while Pool Change feature is in preview state) Request preview access for Azure NetApp Files Pool Change. For more information, please refer to [this](https://docs.microsoft.com/en-us/azure/azure-netapp-files/dynamic-change-volume-service-level#register-the-feature) document.
-1. Resource Group created
+1. Resource Group created.
 1. Virtual Network with a delegated subnet to Microsoft.Netapp/volumes resource. For more information, please refer to [Guidelines for Azure NetApp Files network planning](https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-network-topologies)
 1. For this sample console appplication work, we are using service principal based  authenticate, follow these steps in order to setup authentication:
     1. Within an [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart) session, make sure you're logged on at the subscription where you want to be associated with the service principal by default:
