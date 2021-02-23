@@ -5,7 +5,7 @@ languages:
 products:
 - azure
 - azure-netapp-files
-description: "This project demonstrates how to perform a pool change on a Volume for Microsoft.NetApp resource provider using .NETCore SDK.
+description: This project demonstrates how to perform a pool change on a Volume for Microsoft.NetApp resource provider using .NETCore SDK.
 ---
 
 # Azure NetAppFiles SDK Sample - Pool Change for .NETCore 
