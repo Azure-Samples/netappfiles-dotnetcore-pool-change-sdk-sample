@@ -17,15 +17,14 @@ namespace Microsoft.Azure.Management.ANF.Samples
     {
         //------------------------------------------IMPORTANT------------------------------------------------------------------
         // Setting variables necessary for resources creation - change these to appropriated values related to your environment
-        // Please NOTE: Resource Group and VNETs need to be created prior to run this code
+        // Please NOTE: Resource Group, VNET and subnet need to be created prior to run this code
         //----------------------------------------------------------------------------------------------------------------------
 
-        // Subscription - Change SubId below
         const string subscriptionId = "<Subscription ID>";
 
-        const string resourceGroupName = "<Resource Group Name>";
+        const string resourceGroupName = "<Resource Group Name>";        
         const string location = "westus";
-        const string subnetId = "<subnet ID>";
+        const string subnetId = "<subnet ID>";        
         const string anfAccountName = "anftestaccount";
         const string anfVolumeName = "anftestvolume";
 
@@ -36,7 +35,6 @@ namespace Microsoft.Azure.Management.ANF.Samples
         //Secondary Capacity pool
         const string secondaryCapacityPoolName = "anfsecondarypool";
         const string SecondaryCapacityPoolServiceLevel = "Standard";
-
 
         // Shared Capacity Pool Properties
         const long capacitypoolSize = 4398046511104;  // 4TiB which is minimum size
